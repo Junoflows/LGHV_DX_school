@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // confirm 은 확인이 T, 취소는 F가 리턴
+        let r = confirm('식사는 하셨나용')
+        if (r == true) {
+            document.write('무엇을 드셨나요?')
+        }
+        else {
+            document.write('뭐라도 드세요?')
+        }
+
+        let bigbang = "name = GD"
+        let encoding = encodeURI(bigbang)
+        alert(encoding)
+        alert(decodeURI(encoding))
+    </script>
+</body>
+</html>

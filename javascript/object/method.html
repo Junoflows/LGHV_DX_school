@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let Person = class{
+            // 생성자
+            constructor(name, score) {
+                this.name = name;
+                this.score = score;
+            }
+
+            // 출력하는 메서드
+            disp(){
+                console.log(this.name + ": " + this.score);
+            }
+
+            // getter
+            getName() {
+                return this.name
+            }
+
+            // setter
+            setName(name) {
+                this.name = name;
+            }
+
+            getScore() {
+                return this.score;
+            }
+
+            setScore(score) {
+                // 올바른 데이터인지 확인해서 아니면 대입하지 않음
+                if (score < 0 || score > 100) {
+                    alert("Score is out of range");
+                    return;
+                }
+                this.score = score;
+            }
+
+        }
+
+        let obj = new Person('junho', 90)
+        obj.setScore(70)
+        obj.disp()
+
+    </script>
+</body>
+</html>

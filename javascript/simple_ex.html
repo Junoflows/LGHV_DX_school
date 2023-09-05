@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <script>
+        let index = 0
+        setInterval(function() {
+            index = index + 1
+            if (index % 3 == 0) {
+                document.write("빨강 <br/>")
+            }
+            if (index % 3 == 1) {
+                document.write("파랑 <br/>")
+            }
+            if (index % 3 == 2) {
+                document.write("초록 <br/>")
+            }
+        }, 1000)
+    </script> -->
+    
+    <script>
+        let index = 0
+        let colors = ['빨강', '파랑', '노랑']
+        setInterval(function() {
+            // index = index + 1
+            index++
+            document.write(colors[index % colors.length] + '<br/>')
+        })
+    </script>
+</body>
+</html>

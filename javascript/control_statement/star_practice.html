@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 별 찍기 연습
+        // 1번
+        let star = 0
+        while (star < 5){
+            for (let i = 0; i <= star; i++){
+                document.write("*")
+            }
+            document.write("<br/>")
+            star = star + 1
+        }
+        document.write("</br>")
+
+        // 2번
+
+        len = 4 // 첫 번째 줄 공백 수
+        for (let i = 0; i <= len*2; i++){
+            if (i == len) document.write("*");
+            else document.write("\u00a0");
+        }
+        document.write("<br/>")
+
+        let j = len - 1
+        let k = len + 1
+        let num = 0
+        while (num < len - 1){
+            for(let i = 0; i <= len - 1; i++){
+                if (i == j) document.write("*");
+                else document.write("\u00a0");
+            } 
+            j = j - 1;
+            document.write("\u00a0")
+            
+            for(let i = len + 1; i <= len*2; i++){
+                if (i == k) document.write("*");
+                else document.write("\u00a0");
+            }
+            k = k + 1
+            document.write("<br/>")
+            num += 1
+        }
+        for (let i = 0; i <=len*2; i++) {
+            document.write("*")
+        }
+
+        document.write("<br/><br/>")
+
+
+        // 2번 좀 더 나은 방식??
+
+        len = 5// 첫 번째 줄 공백 개수
+        height = 0 // height 번째 줄
+        // for (height = 0; height <= len; height++){}
+        for (height = 0; height <= len; height++) {
+
+            // 마지막 줄 처리
+            if (height == len){
+                for (i = 0; i <= len*2; i++){                   
+                    document.write("*")
+                }
+                break;
+            }
+            
+            // 별 전에 공백
+            for (let i = 0; i <= len-1-height ; i++) {
+                document.write("\u00a0")
+            }
+            document.write("*")
+            for (let i = 0; i <= 2*(height-1); i++) {
+                //첫 줄 처리
+                if (height == 0) break;
+                document.write("\u00a0")
+                
+                if (i == 2*(height-1)){
+                    document.write("*")
+                }
+                else continue;
+            }
+
+            // 별 후의 공백
+            for (let i = 0; i <= len-1-height; i++) {
+                document.write("\u00a0")
+            }
+            document.write("<br/>")
+            
+        }
+        document.write("<br/><br/>")
+
+        let height = 4;
+        
+        for (let i = 0; i < height; i++) {
+            
+            for (let j = i; j < height; j++) {
+                document.write("\u00a0");
+            }
+            for (let j = 0; j < (2*i)+1; j++){
+                if (i == height-1 || j == 0 || j == 2*i){
+                    document.write("*")
+                }
+                else document.write("\u00a0")
+            }
+
+            document.write("<br/>")
+        }
+
+</script>
+</body>
+</html>

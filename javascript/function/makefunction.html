@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function f1() {
+            document.write('Hello <br/>')
+        }
+
+        let f2 = function() {
+            document.write('Helloworld<br/>')
+        }
+        
+        // 함수 호출
+        f1() // 별도의 메모리 공간을 할당받아서 f1의 내용을 수행
+        f2() // f2 라는 함수를 호출(call)
+
+        let noargfunc = function() {
+            for (let i = 0; i < 3; i++) {
+                document.write(i+'<br/>')
+            }
+        }
+        let argfunc = function(cnt) {
+            for (let i = 0; i < cnt; i++) {
+                document.write(i+ '<br/>');
+            }
+        }
+        noargfunc()
+        argfunc() // 작업을 수행하지 못함 -- 매개변수를 주지않으면 undefined
+
+        //result가 없는 함수
+        let intAddint = function(a, b) {
+            let r = a + b;
+            document.write(a +"+" + b + "=", a+b + '<br/>');
+            //return 이 생략된 경우 맨 마지막에 return이 있는 것으로 간주
+            //return
+        }
+        intAddint(100, 300)
+
+        // 매개변수는 뒤에서부터 생략이 가능
+        // 생략하면 undefined 가 대입됨
+        intAddint(100)
+
+        // return 하는 데이터가 없는 경우 작업을 이어서 수행할 수는 없음
+        let intaddint = function(a, b) {
+            let r = a + b;
+            return r
+        }
+        result = intaddint(100, 300)
+        document.write(result+ "<br/>")
+
+        // 데이터 분석할 때는 복사본 만들어서 할 것 -- 데이터를 다시 불러오는 과정이 오래 걸림 
+        result = intaddint(result, 700)
+        document.write(result)
+    </script>
+</body>
+</html>
