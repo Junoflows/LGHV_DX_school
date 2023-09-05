@@ -1,0 +1,11 @@
+SELECT * FROM EMP;
+
+SELECT * FROM DEPT;
+
+SELECT * FROM SALGRADE;
+
+SELECT * FROM TCITY;
+
+SELECT * FROM TSTAFF;
+
+select * from all_all_tables
