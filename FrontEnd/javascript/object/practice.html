@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        // // 좌우 공백 제거와 대문자로 변환
+        // let company = "     Adamsoft   "
+        // let result = company.trim().toUpperCase();
+        // console.log(result);
+        // // 아래 파일 명에서 확장자를 추출
+        // // . 단위로 분할해서 마지막 요소를 출력
+        // let filename = "adam.hwp";
+        // let result1 = filename.split(".");
+        // console.log(result1[result1.length -1]);
+
+        // // .의 위치를 찾고 . 다음 부분을 추출
+        // let result2 = filename.indexOf(".");
+        // console.log(filename.substring(result2));
+
+        // CGGC의 모든 위치를 출력하시오
+        // 중첩되는 경우는 앞의 문자열 한 번만 적용
+        let origin = "ASDWRSCGGCDOOCGGCGGCSEWECGGCDDFFFFCGGC";
+        let idx = origin.indexOf('CGGC');
+        let tmp = idx
+        while (true) {
+            idx += 4
+            re_idx = origin.substring(idx).indexOf("CGGC");
+            if (re_idx <= 0) break;
+            tmp = tmp + " " + [idx + re_idx]
+            idx += re_idx
+            
+            }
+
+        console.log(tmp);
+        //origin.substring(start = result3, end = result3 + 4);
+        // let ar = [result3]
+        // console.log(result3);
+        // console.log(result4);
+        // console.log(result5);
+        // console.log(tmp);
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function outer() {
+            let data = 0; // 지역변수는 함수 내에서만 사용 가능
+            data = data + 1; 
+            console.log(data);
+        }
+
+        outer();
+        outer()
+        
+        //console.log(data); 함수 외부에서는 함수 내의 데이터를 사용 불가능
+
+        // closure 
+        function outer1() {
+            let data = 0; 
+            return function() {
+            data = data + 1; 
+            console.log(data);
+            }
+        }
+        // outer 함수를 호출하고 그 결과를 inner에 저장
+        // outer 함수가 리턴하는 함수를 inner에 저장
+        let inner = outer1();
+        inner();
+        inner();
+
+    </script>
+</body>
+</html>

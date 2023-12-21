@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+         // 메서드 호출하기
+        let obj = {name : "junho", age: 25, 
+                disp : function() {document.write(this.name), document.write(this.age)}}
+        obj.disp()
+        
+
+        //생성자가 없는 경우 동일한 모양의 2개의 객체 생성
+        let ar = [
+            {name : "songjunho", disp : function() {console.log(this.name)}},
+            {name : "songjungeol", disp : function() {console.log(this.name)}},
+        ];
+        for(idx in ar) {
+            ar[idx].disp();
+        }
+
+        //생성자 - 함수 안에서 this 를 사용했기 때문에
+        let person = function(name) {
+            this.name = name;
+            this.disp = function() {console.log(this.name)}
+        }
+        // 메서드는 다시 만들지 않고 속성만 설정해서 인스턴스를 생성 -- 생성자를 쓰는 이유
+        // 생성자를 이용해서 인스턴스를 만들 때는 new 와 함께 호출
+        // heap 공간에 인스턴스를 생성
+        ar = [new person("songjunho"), new person("songjungeol")];
+        for (idx in ar) {
+            ar[idx].disp();
+        }
+
+        // 클래스를 생성하고 인스턴스 생성, 클래스 이름은 관습적으로 대문자 사용
+        let Member = class{
+            // 생성자
+            constructor(name) {
+                this.name = name;
+            }
+
+            // 클래스 안에 메서드를 만들 때는 let이나 function 생략가능
+            disp(){
+                console.log(this.name)
+            }
+        }
+
+        ar = [new Member("GD"), new Member("Taeyang")];
+        for (idx in ar) {
+                    ar[idx].disp();
+                }
+    </script>
+</body>
+</html>
